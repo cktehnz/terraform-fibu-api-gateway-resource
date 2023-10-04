@@ -51,6 +51,7 @@ variable "resources" {
       status_code            = string
       response_model         = string
       response_template_file = string
+      query_parameters       = list(string) 
     }))
   }))
   default = []
