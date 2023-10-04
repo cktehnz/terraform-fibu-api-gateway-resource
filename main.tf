@@ -34,6 +34,10 @@ resource "aws_api_gateway_method" "dynamic_method" {
   http_method   = each.value.method_type
   authorization = each.value.authorization
 
+  request_parameters = {
+    for param in each.value.query_parameters : "method.request.querystring.${param}" => true
+  }
+
   depends_on = [
     aws_api_gateway_resource.root_resources,
     aws_api_gateway_resource.child_resources

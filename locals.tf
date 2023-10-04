@@ -8,6 +8,7 @@ locals {
         status_code            = method.status_code
         response_model         = method.response_model
         response_template_file = method.response_template_file
+        query_parameters       = coalesce(method.query_parameters, [])
         parent                 = res.parent
       }
     ]
