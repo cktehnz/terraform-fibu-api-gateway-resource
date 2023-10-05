@@ -43,8 +43,9 @@ variable "api_gateway" {
 variable "resources" {
   description = "List of API Gateway resources and their methods"
   type = list(object({
-    path_part = string
-    parent    = string
+    path_part       = string
+    parent          = string
+    path_parameters = list(string)
     methods = list(object({
       type                   = string
       authorization          = string

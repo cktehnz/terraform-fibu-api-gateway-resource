@@ -9,6 +9,7 @@ locals {
         response_model         = method.response_model
         response_template_file = method.response_template_file
         query_parameters       = coalesce(method.query_parameters, [])
+        path_parameters        = coalesce(res.path_parameters, [])
         parent                 = res.parent
       }
     ]
